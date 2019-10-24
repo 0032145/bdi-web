@@ -54,7 +54,7 @@
 				if ("ui_id".equals(search) || "ui_name".equals(search) || "ui_age".equals(search)) {
 					//ps.setString(1,searchStr);
 					ps.setString(1, "%" + searchStr + "%");
-				} 
+				}
 			}
 			ResultSet rs = ps.executeQuery();
 			String str = "";

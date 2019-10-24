@@ -4,6 +4,17 @@
 <%@page import="com.bdi.test.common.DBCon"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%!
+public String checkStr(String str, String targetStr) {
+	String[] strs = str.split(", ");
+	for(String s:strs) {
+		if(s.equals(targetStr)){
+			return "checked";
+		}
+	}
+	return "";
+}
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -56,10 +67,10 @@
 			<tr>
 				<th>취미</th>
 					<td>
-					<input type="checkbox" name="hobby" value="study">공부
-					<input type="checkbox" name="hobby" value="game">게임 
-					<input type="checkbox" name="hobby" value="movie">영화
-					<input type="checkbox" name="hobby" value="music">음악
+					<input type="checkbox" name="hobby" value="study"<%=checkStr(rs.getString("hobby"),"study")%>>공부
+					<input type="checkbox" name="hobby" value="game"<%=checkStr(rs.getString("hobby"),"game")%>>게임 
+					<input type="checkbox" name="hobby" value="movie"<%=checkStr(rs.getString("hobby"),"movie")%>>영화
+					<input type="checkbox" name="hobby" value="music"<%=checkStr(rs.getString("hobby"),"music")%>>음악
 					</td>
 			</tr>
 			<tr>
