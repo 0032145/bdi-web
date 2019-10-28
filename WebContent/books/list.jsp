@@ -36,8 +36,8 @@
 		<%
 			String search = request.getParameter("search");
 			String searchStr = request.getParameter("searchStr");
-			String sql = "SELECT bi.bi_num,bi.bi_image,bi.bi_title,bi.bi_desc,bi.bi_star,bi.bi_credat,";
-			sql += "(SELECT bt_name from books_type bt where bt.bt_num=bi.bi_type) bi_type";
+			String sql = "SELECT bi.bi_num,bi.bi_image,bi.bi_title,bi.bi_desc,bi.bi_star,bi.bi_credat, ";
+			sql += "(SELECT bt_name from books_type bt where bt.bt_num=bi.bi_type) bi_type ";
 			sql += "from BOOKS_INFO bi";
 			if (search != null) {
 				if ("bi_num".equals(search)) {
