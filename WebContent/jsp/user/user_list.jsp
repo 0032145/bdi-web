@@ -75,7 +75,6 @@
 					out.println("</tr>");
 				}
 			%>
-		
 	</table>
 </body>
 </html>
